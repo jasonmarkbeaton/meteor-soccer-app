@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-export default class Player extends Component {
+export default class TeamStats extends Component {
   render() {
     return (
-      <h1>Player</h1>
+      <h1>Team Stats</h1>
     )
   }
 }
