@@ -6,7 +6,7 @@ import { Router, Route, browserHistory } from 'react-router';
 
 
 import App from '../imports/ui/App.jsx';
-import Example from '../imports/ui/Example.jsx';
+import New from '../imports/ui/New.jsx';
 import Lost from '../imports/ui/Lost';
 
 injectTapEventPlugin();
@@ -15,7 +15,7 @@ Meteor.startup(() => {
   render((
     <Router history={browserHistory}>
       <Route path="/" component={App}/>
-      <Route path="/example" component={Example}/>
+      <Route path="/new" component={New}/>
       <Route path="*" component={Lost}/>
     </Router>
   ), document.getElementById('render-target'));
