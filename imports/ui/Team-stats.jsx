@@ -7,6 +7,38 @@ export default class TeamStats extends Component {
     const players = this.props.players;
     const numPlayers= players.length;
 
+    const ballManipulation = Math.round((players.reduce((ballManipulation, player) => {
+      return ballManipulation + player.ballManipulation;
+    }, 0) / ( 3 * numPlayers)) * 100);
+
+    const kickingAbilities = Math.round((players.reduce((kickingAbilities, player) => {
+      return kickingAbilities + player.kickingAbilities;
+    }, 0) / ( 3 * numPlayers)) * 100);
+
+    const passingAbilities = Math.round((players.reduce((passingAbilities, player) => {
+      return passingAbilities + player.passingAbilities;
+    }, 0) / ( 3 * numPlayers)) * 100);
+
+    const duelTackling = Math.round((players.reduce((duelTackling, player) => {
+      return duelTackling + player.duelTackling;
+    }, 0) / ( 3 * numPlayers)) * 100);
+
+    const fieldCoverage = Math.round((players.reduce((fieldCoverage, player) => {
+      return fieldCoverage + player.fieldCoverage;
+    }, 0) / ( 3 * numPlayers)) * 100);
+
+    const blockingAbilities = Math.round((players.reduce((blockingAbilities, player) => {
+      return blockingAbilities + player.blockingAbilities;
+    }, 0) / ( 3 * numPlayers)) * 100);
+
+    const gameStrategy = Math.round((players.reduce((gameStrategy, player) => {
+      return gameStrategy + player.gameStrategy;
+    }, 0) / ( 3 * numPlayers)) * 100);
+
+    const playmakingRisks = Math.round((players.reduce((playmakingRisks, player) => {
+      return playmakingRisks + player.playmakingRisks;
+    }, 0) / ( 3 * numPlayers)) * 100);
+
     const data = {
       labels: ['Ball Manipulation', 'Kicking Abilities', 'Passing Abilities', 'Duel Tackling', 'Field Coverage', 'Blocking Abilities', 'Game Strategy', 'Playmaking Risks'],
       datasets: [
@@ -18,7 +50,7 @@ export default class TeamStats extends Component {
           pointBorderColor: '#fff',
           pointHoverBackgroundColor: '#fff',
           pointHoverBorderColor: 'rgba(12,71,161,1)',
-          data: [65, 59, 90, 81, 56, 55, 40]
+          data: [ballManipulation, kickingAbilities, passingAbilities, duelTackling, fieldCoverage, blockingAbilities, gameStrategy, playmakingRisks]
         }
       ]
     };
